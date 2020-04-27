@@ -1,0 +1,41 @@
+
+body{
+	text-align:center;
+	display:'flex';
+	justify-content:'center';
+	align-items:'center';
+	font-family:'Helvetica';
+}
+
+.navitem{
+	color:black;
+	text-decoration:none;
+	padding:2vw;
+	font-size:0.9em;
+	background-color:#bfbfbf;
+	
+}
+.navitem:active{
+	color:black;
+	text-decoration:none;
+	padding:2vw;
+	background-color:#b0b0b0;
+	
+}
+
+
+nav{
+	text-align:center;
+	padding:1vh;
+	background-color:rgba(20,20,20,0.1);
+	overflow:hidden;
+	margin-bottom:3vh;
+}
+
+.canvasStyle{
+	flex:1;
+#	width:"100%";
+#	height:"100%";
+	border:1px solid #000000;
+	margin:5vw;
+}

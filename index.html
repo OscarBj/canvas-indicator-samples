@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Graphic Dials</title>
+
+  <!-- Bootstrap core CSS -->
+
+  <!-- Custom styles for this template -->
+  <link href="stylesheets/stylesheet.css" rel="stylesheet">
+
+</head>
+
+<body onload="setup()">
+  
+  <h1></h1>
+  
+  
+  <!-- Navigation -->
+  <nav>
+	<a href="#" class="navitem" onClick="selectDial('gauge')">GAUGES</a>
+	<a href="#" class="navitem" onClick="selectDial('meter')">METERS</a>
+	<a href="#" class="navitem"  onClick="selectDial('indicator')">INDICATORS</a>
+  </nav>
+	
+	
+	<canvas class="canvasStyle" id="gauge-full">
+	</canvas>
+	
+	<canvas class="canvasStyle" id="gauge-sector">
+	</canvas>
+	
+	<canvas class="canvasStyle" id="meter">
+	</canvas>
+	
+	<canvas class="canvasStyle" id="level-meter">
+	</canvas>
+	
+	<canvas class="canvasStyle" id="indicator">
+	</canvas>
+	
+	<canvas class="canvasStyle" id="indicator-stock">
+	</canvas>
+	
+  <script src="scripts/stock-indicator.js"></script>
+  <script src="scripts/indicator.js"></script>
+  <script src="scripts/meter.js"></script>
+  <script src="scripts/level-meter.js"></script>
+  <script src="scripts/gauge.js"></script>
+  <script src="scripts/sector-gauge.js"></script>
+  <script src="scripts/scripts.js"></script>
+</body>
+
+</html>
+
