@@ -6,28 +6,31 @@ function selectDial(type){
 		case 'gauge':
 			components[0].style.display='inline';
 			components[1].style.display='inline';
+			components[2].style.display='inline';
 			
-			components[2].style.display='none';
 			components[3].style.display='none';
-			
 			components[4].style.display='none';
 			components[5].style.display='none';
+			components[6].style.display='none';
 			
-			resetSectorValues();
+			resetSectorGaugeValues();
 			resetGaugeValues();
+			resetBallGaugeValues();
 			
+			renderBallGauge();
 			renderSectorGauge();
 			return renderGauge();
 			
 		case 'meter':
 			components[0].style.display='none';
 			components[1].style.display='none';
-
-			components[2].style.display='inline';
-			components[3].style.display='inline';
+			components[2].style.display='none';
 			
-			components[4].style.display='none';
+			components[3].style.display='inline';
+			components[4].style.display='inline';
+			
 			components[5].style.display='none';
+			components[6].style.display='none';
 			
 			resetMeterValues();
 			resetLevelMeterValues();
@@ -38,12 +41,12 @@ function selectDial(type){
 		case 'indicator':
 			components[0].style.display='none';
 			components[1].style.display='none';
-
 			components[2].style.display='none';
 			components[3].style.display='none';
+			components[4].style.display='none';
 			
-			components[4].style.display='inline';
 			components[5].style.display='inline';
+			components[6].style.display='inline';	
 			
 			resetIndicatorValues();
 			resetStockIndicatorValues();
@@ -58,23 +61,26 @@ function selectDial(type){
 function setup(){
 	components[0] = document.getElementById('gauge-full');
 	components[1] = document.getElementById('gauge-sector');
+	components[2] = document.getElementById('gauge-ball');
 	
-	components[2] = document.getElementById('meter');
-	components[3] = document.getElementById('level-meter');
+	components[3] = document.getElementById('meter');
+	components[4] = document.getElementById('level-meter');
 	
-	components[4] = document.getElementById('indicator');
-	components[5] = document.getElementById('indicator-stock');
+	components[5] = document.getElementById('indicator');
+	components[6] = document.getElementById('indicator-stock');
 	
 	renderGauge();
 	renderSectorGauge();
+	renderBallGauge();
 	
 	components[0].style.display='inline';
 	components[1].style.display='inline';
+	components[2].style.display='inline';
 	
-	components[2].style.display='none';
 	components[3].style.display='none';
-	
 	components[4].style.display='none';
+	
 	components[5].style.display='none';
+	components[6].style.display='none';
 		
 }

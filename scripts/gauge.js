@@ -22,30 +22,31 @@ function resetGaugeValues(){
 
 function renderGaugeBackGround(){
 	ctx.beginPath();
-	ctx.lineWidth=0.05*side;
+	ctx.lineWidth=0.1*side;
 	ctx.lineCap="round";
 	ctx.strokeStyle='#9dbed4';
 	//ctx.beginPath();
-	ctx.arc(side*0.275, side*0.275, side*0.25, Math.PI*1.5, Math.PI*bg_angle);
+	ctx.arc(side*0.5, side*0.5, side*0.45, Math.PI*1.5, Math.PI*bg_angle);
 	
 	ctx.stroke();
 }
 
 function renderGaugeDial(val){
 	ctx.beginPath();
-	ctx.lineWidth=0.05*side;
+	ctx.lineWidth=0.1*side;
 	//ctx.strokeStyle='#000000';
 	ctx.lineCap="round";
 	ctx.strokeStyle='#5e97bd';
-	ctx.arc(side*0.275, side*0.275, side*0.25, Math.PI*1.5, val*(Math.PI/180)-Math.PI*0.5,false);
+	ctx.arc(side*0.5, side*0.5, side*0.45, Math.PI*1.5, val*(Math.PI/180)-Math.PI*0.5,false);
 	ctx.stroke();
 }
 
 function renderGaugeValue(){
 	
-	ctx.font = side*0.2+'px Helvetica';
+	ctx.font = side*0.35+'px Helvetica';
 	ctx.fillStyle='#5e97bd';
-	ctx.fillText(Math.round(val*100)+'%', side*0.09, side*0.325, side*0.5);
+	ctx.textAlign = "center"
+	ctx.fillText(Math.round(val*100)+'%', side*0.55, side*0.6, side);
 }
 let y = 0;
 function gaugeFull(){
@@ -66,9 +67,6 @@ function gaugeFull(){
 	
 	if(bg_angle+0.05<4){
 		requestAnimationFrame(gaugeFull);
-	} else {
-		console.log(alpha);
-		console.log("gauge updates:" + y);
 	}
 }
 
@@ -79,17 +77,20 @@ function animationLoop(){
 }
 
 function renderGauge(){
-	val = 0.17 // AKA 92 %
+	val = 0.95 // AKA 92 %
 	
 	deg = 360*val;
 	let w = window.innerWidth;
 	let h = window.innerHeight;
 	side = Math.min(w,h);
 	
+	// Scale
+	side = side*0.8;
+	
 	let c1 = document.getElementById('gauge-full');
 
-	c1.width= (side*0.5)+(side*0.05);
-	c1.height= (side*0.5)+(side*0.05);
+	c1.width = side;//(side*0.5)+(side*0.05);
+	c1.height = side;//(side*0.5)+(side*0.05);
 	
 	ctx = c1.getContext("2d");
 	ctx.clearRect(0,0,side,side);
